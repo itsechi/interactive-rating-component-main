@@ -1,0 +1,151 @@
+$orange: hsl(25, 97%, 53%);
+$light-grey: hsl(217, 12%, 63%);
+$medium-grey: hsl(216, 12%, 54%);
+$dark-blue: hsl(213, 19%, 18%);
+$very-dark-blue: hsl(216, 12%, 8%);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+body {
+  background-color: $very-dark-blue;
+  color: $light-grey;
+  font-family: 'Overpass', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+.rating-component {
+  background: linear-gradient(360deg, rgba(23, 30, 40, 1) 0%, rgba(35, 40, 50, 1) 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 26rem;
+  height: 26rem;
+
+  @media (max-width: 450px) {
+    width: 90vw;
+    height: auto;
+  }
+
+  &--thank-you {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+  }
+
+  &__star {
+    background-color: $dark-blue;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+
+    &--thank-you {
+      margin-top: 2rem;
+    }
+  }
+
+  &__rating {
+    background-color: $dark-blue;
+    color: $orange;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    margin-top: 2rem;
+  }
+
+  &__description {
+    text-align: center;
+  }
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+input {
+  display: none;
+}
+
+label {
+  background-color: $dark-blue;
+  border-radius: 50%;
+  display: inline-block;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s;
+
+  @media (max-width: 450px) {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &:hover {
+    background-color: $light-grey;
+    color: white;
+  }
+}
+
+button {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  padding: 0.8rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  background-color: $orange;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background-color: white;
+    color: $orange;
+  }
+}
+
+.active,
+.active:hover {
+  color: white;
+  background-color: $orange;
+  transition: all 0.2s;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.attribution a {
+  color: $orange;
+  text-decoration: none;
+}
